@@ -2,7 +2,7 @@ import React from "react";
 import { version } from "../../../package.json";
 
 const Header = () => (
-  <section className="section hero is-primary">
+  <section id="wtfracsip-header" className="section hero is-primary">
     <div className="hero-body">
       <div className="container">
         <h1 className="title">WTFRACSIP</h1>

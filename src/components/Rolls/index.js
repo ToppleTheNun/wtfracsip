@@ -14,7 +14,7 @@ const Rolls = () => {
     : generateRolesForFives(5);
   const [rolls, setRolls] = useState(generatedRoles);
   return (
-    <section className="section">
+    <section id="wtfracsip-rolls" className="section">
       <div className="container">
         <Buttons setRolls={setRolls} setThrees={setThrees} threes={threes} />
         <div className="columns">

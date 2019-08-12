@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/Nunnery/wtfracsip.git"
   },
+  "license": "ISC",
   "homepage": "https://nunnery.github.io/wtfracsip",
   "dependencies": {
     "bulma": "^0.7.5",
