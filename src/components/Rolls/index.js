@@ -1,35 +1,30 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 
-import { generateRolesForThrees } from "../../services/generator";
+import Buttons from "../Buttons";
+import {
+  generateRolesForFives,
+  generateRolesForThrees
+} from "../../services/generator";
 import Roll from "../Roll";
 
-const Rolls = ({ numberOfRolls }) => {
-  const generatedRoles = generateRolesForThrees(numberOfRolls);
-  const [roles, setRoles] = useState(generatedRoles);
+const Rolls = () => {
+  const [threes, setThrees] = useState(true);
+  const generatedRoles = threes
+    ? generateRolesForThrees(3)
+    : generateRolesForFives(5);
+  const [rolls, setRolls] = useState(generatedRoles);
   return (
     <section className="section">
       <div className="container">
-        <button
-          className="button"
-          onClick={() => setRoles(generateRolesForThrees(numberOfRolls))}
-        >
-          Reroll
-        </button>
+        <Buttons setRolls={setRolls} setThrees={setThrees} threes={threes} />
         <div className="columns">
-          {roles.map((role, index) => (
-            <Roll key={`role-${index}`} roll={role} />
+          {rolls.map((roll, index) => (
+            <Roll key={`roll-${index}`} roll={roll} />
           ))}
         </div>
       </div>
     </section>
   );
-};
-Rolls.defaultProps = {
-  numberOfRolls: 1
-};
-Rolls.propTypes = {
-  numberOfRolls: PropTypes.number
 };
 
 export default Rolls;

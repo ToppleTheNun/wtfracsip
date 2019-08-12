@@ -35,6 +35,7 @@ const Roll = ({ roll }) => {
                       type="email"
                       value={roll.role || ""}
                       readOnly
+                      tabIndex={-1}
                     />
                   </p>
                 </div>
@@ -52,6 +53,7 @@ const Roll = ({ roll }) => {
                       type="email"
                       value={roll.letter || ""}
                       readOnly
+                      tabIndex={-1}
                     />
                   </p>
                 </div>
