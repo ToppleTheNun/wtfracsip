@@ -1,0 +1,78 @@
+{
+  "name": "wtfracsip",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nunnery/wtfracsip.git"
+  },
+  "dependencies": {
+    "bulma": "^0.7.5",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@testing-library/cypress": "^4.0.5",
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/react": "^8.0.7",
+    "@types/jest": "^24.0.17",
+    "codecov": "^3.5.0",
+    "commitizen": "^4.0.3",
+    "cypress": "^3.4.1",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint-plugin-cypress": "^2.6.1",
+    "husky": "^3.0.2",
+    "jest-chain": "^1.1.2",
+    "jest-extended": "^0.11.2",
+    "jest-matcher-utils": "^24.8.0",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "wait-on": "^3.3.0"
+  },
+  "scripts": {
+    "cz": "git-cz",
+    "codecov": "codecov",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "plugin:cypress/recommended"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook",
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
