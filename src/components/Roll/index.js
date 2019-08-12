@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import champions from "../../constants/champions";
 
 const Roll = ({ roll }) => {
   const [playerName, setPlayerName] = useState("");
@@ -23,43 +24,21 @@ const Roll = ({ roll }) => {
                 </div>
               </div>
             </div>
-            <div className="field is-horizontal">
-              <div className="field-label is-normal">
-                <label className="label">Role</label>
-              </div>
-              <div className="field-body">
-                <div className="field">
-                  <p className="control">
-                    <input
-                      className="input is-static"
-                      type="email"
-                      value={roll.role}
-                      readOnly
-                      tabIndex={-1}
-                      data-roll-role={roll.role}
-                    />
-                  </p>
-                </div>
-              </div>
+            <div className="field">
+              <label className="label">Role</label>
+              <p>{roll.role}</p>
             </div>
-            <div className="field is-horizontal">
-              <div className="field-label is-normal">
-                <label className="label">Letter</label>
-              </div>
-              <div className="field-body">
-                <div className="field">
-                  <p className="control">
-                    <input
-                      className="input is-static"
-                      type="email"
-                      value={roll.letter}
-                      readOnly
-                      tabIndex={-1}
-                      data-roll-letter={roll.letter}
-                    />
-                  </p>
-                </div>
-              </div>
+            <div className="field">
+              <label className="label">Letter</label>
+              <p>{roll.letter}</p>
+            </div>
+            <div className="field">
+              <label className="label">Champions</label>
+              <p>
+                {champions
+                  .filter(value => value.startsWith(roll.letter))
+                  .join(", ")}
+              </p>
             </div>
           </div>
         </div>
