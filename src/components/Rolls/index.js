@@ -7,8 +7,13 @@ import {
 } from "../../services/generator";
 import Roll from "../Roll";
 
+const initialThreesOrFives =
+  process.env.NODE_ENV === "development" && window.Cypress && window.fives
+    ? false
+    : true;
+
 const Rolls = () => {
-  const [threes, setThrees] = useState(true);
+  const [threes, setThrees] = useState(initialThreesOrFives);
   const generatedRoles = threes
     ? generateRolesForThrees(3)
     : generateRolesForFives(5);

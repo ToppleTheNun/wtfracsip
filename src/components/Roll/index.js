@@ -33,9 +33,10 @@ const Roll = ({ roll }) => {
                     <input
                       className="input is-static"
                       type="email"
-                      value={roll.role || ""}
+                      value={roll.role}
                       readOnly
                       tabIndex={-1}
+                      data-roll-role={roll.role}
                     />
                   </p>
                 </div>
@@ -51,9 +52,10 @@ const Roll = ({ roll }) => {
                     <input
                       className="input is-static"
                       type="email"
-                      value={roll.letter || ""}
+                      value={roll.letter}
                       readOnly
                       tabIndex={-1}
+                      data-roll-letter={roll.letter}
                     />
                   </p>
                 </div>
@@ -65,13 +67,10 @@ const Roll = ({ roll }) => {
     </div>
   );
 };
-Roll.defaultProps = {
-  roll: {}
-};
 Roll.propTypes = {
   roll: PropTypes.shape({
-    role: PropTypes.string,
-    letter: PropTypes.string
+    role: PropTypes.string.isRequired,
+    letter: PropTypes.string.isRequired
   })
 };
 
