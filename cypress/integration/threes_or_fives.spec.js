@@ -32,9 +32,11 @@ describe("Threes or Fives", () => {
     it("has all three roles showing", () => {
       cy.visit("/");
 
-      cy.get('#wtfracsip-rolls input[data-roll-role="jungle"]').should("exist");
-      cy.get('#wtfracsip-rolls input[data-roll-role="bottom"]').should("exist");
-      cy.get('#wtfracsip-rolls input[data-roll-role="top"]').should("exist");
+      cy.get("#wtfracsip-rolls").within(() => {
+        cy.getByText("jungle").should("exist");
+        cy.getByText("bottom").should("exist");
+        cy.getByText("top").should("exist");
+      });
     });
   });
 
@@ -87,13 +89,13 @@ describe("Threes or Fives", () => {
         }
       });
 
-      cy.get('#wtfracsip-rolls input[data-roll-role="jungle"]').should("exist");
-      cy.get('#wtfracsip-rolls input[data-roll-role="bottom"]').should("exist");
-      cy.get('#wtfracsip-rolls input[data-roll-role="top"]').should("exist");
-      cy.get('#wtfracsip-rolls input[data-roll-role="middle"]').should("exist");
-      cy.get('#wtfracsip-rolls input[data-roll-role="support"]').should(
-        "exist"
-      );
+      cy.get("#wtfracsip-rolls").within(() => {
+        cy.getByText("jungle").should("exist");
+        cy.getByText("middle").should("exist");
+        cy.getByText("bottom").should("exist");
+        cy.getByText("support").should("exist");
+        cy.getByText("top").should("exist");
+      });
     });
   });
 
