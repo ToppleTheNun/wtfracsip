@@ -9,12 +9,16 @@
   "license": "ISC",
   "homepage": "https://nunnery.github.io/wtfracsip",
   "dependencies": {
+    "@types/node": "^12.11.6",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
     "bulma": "^0.7.5",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "typescript": "^3.6.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
@@ -23,6 +27,7 @@
     "@testing-library/jest-dom": "^4.2.0",
     "@testing-library/react": "^8.0.7",
     "@types/jest": "^24.0.20",
+    "autoprefixer": "^9.6.5",
     "codecov": "^3.6.1",
     "commitizen": "^4.0.3",
     "cypress": "^3.5.0",
@@ -33,15 +38,18 @@
     "jest-extended": "^0.11.2",
     "jest-matcher-utils": "^24.9.0",
     "node-sass": "^4.13.0",
+    "postcss-cli": "^6.1.3",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "semantic-release": "^15.13.28",
+    "tailwindcss": "^1.1.3",
     "wait-on": "^3.3.0"
   },
   "scripts": {
+    "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
     "cz": "git-cz",
     "codecov": "codecov",
-    "start": "react-scripts start",
+    "start": "npm run build:style && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

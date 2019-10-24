@@ -25,3 +25,5 @@ yarn-error.log*
 .idea/
 cypress/videos/
 cypress/screenshots/
+
+src/styles/tailwind.css
